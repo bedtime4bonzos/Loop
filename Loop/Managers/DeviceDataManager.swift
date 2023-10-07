@@ -1384,7 +1384,7 @@ extension DeviceDataManager {
                 let nowDate = Date()
                 guard nowDate < expiration else {
                     let expiredInterval = nowDate.timeIntervalSince(expiration)
-                    await NotificationManager.sendRemoteCommandExpiredNotification(timeExpired: expiredInterval)
+                    // await NotificationManager.sendRemoteCommandExpiredNotification(timeExpired: expiredInterval)
                     log.error("Remote Notification: Expired: %{public}@", String(describing: notification))
                     return
                 }
@@ -1423,7 +1423,7 @@ extension DeviceDataManager {
                 try validatePushNotificationSource(notification: notification)
                 try await handleBolusAction(bolusAction)
             } catch {
-                await NotificationManager.sendRemoteBolusFailureNotification(for: error, amount: bolusAction.amountInUnits)
+                // await NotificationManager.sendRemoteBolusFailureNotification(for: error, amount: bolusAction.amountInUnits)
                 log.error("Remote Notification: Bolus Action Error: %{public}@", String(describing: notification))
             }
         case .carbsEntry(let carbAction):
@@ -1431,7 +1431,7 @@ extension DeviceDataManager {
                 try validatePushNotificationSource(notification: notification)
                 try await handleCarbAction(carbAction)
             } catch {
-                await NotificationManager.sendRemoteCarbEntryFailureNotification(for: error, amountInGrams: carbAction.amountInGrams)
+                // await NotificationManager.sendRemoteCarbEntryFailureNotification(for: error, amountInGrams: carbAction.amountInGrams)
                 log.error("Remote Notification: Carb Action Error: %{public}@", String(describing: notification))
             }
         }
