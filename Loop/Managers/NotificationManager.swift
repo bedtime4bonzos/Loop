@@ -135,7 +135,8 @@ extension NotificationManager {
             trigger: nil
         )
 
-        UNUserNotificationCenter.current().add(request)
+        // BDW - Commenting this line to suppress notification from appearing on Looper's phone
+        //UNUserNotificationCenter.current().add(request)
     }
     
     @MainActor
@@ -156,7 +157,8 @@ extension NotificationManager {
             trigger: nil
         )
 
-        UNUserNotificationCenter.current().add(request)
+        // BDW - Commenting this line to suppress notification from appearing on Looper's phone
+        //UNUserNotificationCenter.current().add(request)
     }
     
     @MainActor
@@ -177,7 +179,8 @@ extension NotificationManager {
             trigger: nil
         )
 
-        UNUserNotificationCenter.current().add(request)
+        // BDW - Commenting this line to suppress notification from appearing on Looper's phone
+        //UNUserNotificationCenter.current().add(request)
     }
     
     @MainActor
@@ -198,7 +201,8 @@ extension NotificationManager {
             trigger: nil
         )
 
-        UNUserNotificationCenter.current().add(request)
+        // BDW - Commenting this line to suppress notification from appearing on Looper's phone
+        //UNUserNotificationCenter.current().add(request)
     }
     
     static func sendMissedMealNotification(mealStart: Date, amountInGrams: Double, delay: TimeInterval? = nil) {
